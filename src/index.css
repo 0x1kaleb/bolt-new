@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-black;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-black;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-white/20 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-white/30;
+}
+
+/* Hide Spline watermark */
+iframe {
+  position: relative;
+}
+
+iframe::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 140px;
+  height: 50px;
+  background: black;
+  z-index: 1000;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 1s ease-out forwards;
+}
